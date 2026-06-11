@@ -28,8 +28,8 @@ class DataBaseConfig(BaseModel):
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
         env_file=(
-            ".env",
             ".env_template",
+            ".env",
         ),
         case_sensitive=False,
         env_nested_delimiter="__",
@@ -42,4 +42,3 @@ class Settings(BaseSettings):
 
 
 settings = Settings()
-
