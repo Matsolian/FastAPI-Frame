@@ -6,9 +6,9 @@ from sqlalchemy.orm import (
     Mapped,
     mapped_column,
 )
+from .mixins.int_id_pk import IntPkMixin
 
-
-class User(Base):
+class User(IntPkMixin, Base):
     username: Mapped[str] = mapped_column(unique=True)
     foo: Mapped[str]
     bar: Mapped[str]
